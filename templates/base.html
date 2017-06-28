@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The first Django templates!</title>
+</head>
+<body>
+    <h1> {{ hello|lower }} </h1>
+    <h2> {{ Melody|upper }} </h2>
+    <p> 这里是一个p </p>
+    {%  block mainbody %}
+        <p>original</p>
+    {%  endblock %}
+</body>
+</html>
