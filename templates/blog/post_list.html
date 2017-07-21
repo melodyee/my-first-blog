@@ -1,8 +1,14 @@
 <!DOCTYPE html>
+{#{% %}标记意味着我们正在使用Django模板标签#}
+{% load staticfiles %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>I'm Melody ~~~</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}" charset="utf-8">
     </head>
     <body>
 {#    Example1#}
@@ -58,16 +64,39 @@
 
 
 {#    Example5#}
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+{#        <div class="page-header">#}
+{#            <h1><a href="">Django Girls Blog</a></h1>#}
+{#        </div>#}
+{##}
+{#        {% for post in posts %}#}
+{#            <div class="post">#}
+{#                <h1><a href="">{{ post.title }}</a></h1>#}
+{#                <p>published: {{ post.published_date }}</p>#}
+{#                <p>{{ post.text|linebreaks }}</p>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    </body>#}
+
+
+{#    Example6#}
+        <div class="page-header">
+            <h1><a href="/hello1">Django Girls Blog</a></h1>
         </div>
 
-        {% for post in posts %}
-            <div>
-                <h1><a href="">{{ post.title }}</a></h1>
-                <p>published: {{ post.published_date }}</p>
-                <p>{{ post.text|linebreaks }}</p>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                        <div class="post">
+                            <div class="date">
+                                published: {{ post.published_date }}
+                            </div>
+                            <h1><a href="">{{ post.title }}</a></h1>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-        {% endfor %}
+        </div>
     </body>
 </html>
