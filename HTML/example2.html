@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+		# for link
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        p 	{
+            color: black;
+            font-family: courier;
+            font-size: 50%;
+            }
+        img {
+            width:50%;
+        }
+        
+        # for table
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 50%;
+        }
+
+
+        #table {
+    	#	border-spacing: 15px;
+		#}
+        #tr:nth-child(even) {
+        #    background-color: #dddddd;
+        #}
+
+        table#t01 {
+            width: 50%;
+            background-color: #f1f1c1;
+        }
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        table#t01 th {
+            color: white;
+            background-color: black;
+        }
+
+        thead {color:green;}
+        tbody {color:blue;}
+        tfoot {color:red;}
+
+        # for list
+        ul#ulcommon {
+            background-color: #654321;
+            overflow: hidden;
+        }
+        
+
+     	ul#ul01 {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+            color: blue;
+        }
+
+        ul#ul01 li {
+            float: left;
+        }
+
+        ul#ul01 li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        ul#ul01 li a:hover {
+            background-color: red;
+            color: green;
+        }
+
+        </style>
+
+
+    </head>
+    <body>
+
+        <h1>Link</h1>
+        <hr>
+
+        <h2>@Link Color </h2>
+        <p>You can change the default colors of links</p>
+
+        <h2>@Link Target</h2>
+        <a href="html_images.asp" target="_blank" style="text-decoration:none">HTML Images</a>
+        <br>
+
+        <a href="https://www.w3schools.com/html/" target="_top" style="text-decoration:underline">HTML5 tutorial!</a>
+        <br>
+
+        <a href="https://www.w3schools.com/html/" target="_top">HTML5 tutorial! that removed the underline</a>
+
+        <h2>@Image Link</h2>
+        <a href="default.asp">
+        <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+        </a>
+
+
+        <h2>@Bookmark </h2>
+        <h3 id="C4">Chapter 4</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="#C4">Jump to Chapter 4 within the same page</a>
+        <br>
+        <a href="html_demo.html#C4">Jump to Chapter 4， from another page</a>
+
+
+        <h1>Image</h1>
+        <hr>
+
+        <h2>Image Properties</h2>
+        <img src="html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+        <img src="html5.gif" alt="HTML5 Icon" width="128" height="128">
+
+
+        <p>The image is a link. You can click on it.</p>
+
+        <a href="default.asp">
+          <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+        </a>
+
+
+        <h2>Float Image</h2>
+
+        <p><strong>Float the image to the right:</strong></p>
+        <p>
+        <img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+        A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+        </p>
+
+        <p><strong>Float the image to the left:</strong></p>
+        <p>
+        <img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+        A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+        </p>
+
+        <p>Please use the CSS float property. The align attribute is deprecated in HTML 4, and not supported in HTML5.</p>
+
+        <h2>Map & Image Map</h2>
+        <img src="planets.gif" alt="Planets" usemap="#planetmap" style="width:145px;height:126px;">
+
+        <map name="planetmap">
+          <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+          <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+          <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+        </map>
+
+
+        <h1>Table</h1>
+        <hr>
+
+        <h2>Table Properties</h2>
+        <table>
+          <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+          <tr>
+            <td>Ernst Handel</td>
+            <td>Roland Mendel</td>
+            <td>Austria</td>
+          </tr>
+          <tr>
+            <td>Island Trading</td>
+            <td>Helen Bennett</td>
+            <td>UK</td>
+          </tr>
+          <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Yoshi Tannamuri</td>
+            <td>Canada</td>
+          </tr>
+          <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Giovanni Rovelli</td>
+            <td>Italy</td>
+          </tr>
+        </table>
+
+
+      <h2>Cell that spans two columns:</h2>
+      <table style="width:100%">
+          <tr>
+            <th>Name</th>
+            <th colspan="3">Telephone</th>
+          </tr>
+          <tr>
+            <td>Bill Gates</td>
+            <td>55577854</td>
+            <td>55577855</td>
+            <td>55577855</td>
+          </tr>
+      </table>
+
+    <h2>Cell that spans two rows:</h2>
+    <table id="t01">
+    <caption>Contact Table</caption>
+        <tr>
+          <th>Name:</th>
+          <td>Bill Gates</td>
+        </tr>
+        <tr>
+          <th rowspan="3">Telephone:</th>
+          <td>55577854</td>
+        </tr>
+        <tr>
+          <td>55577855</td>
+        </tr>
+        <tr>
+          <td>55577855</td>
+        </tr>
+    </table>
+
+	<h2>Groups the header content in a table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Savings</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td>Sum</td>
+          <td>$180</td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <td>January</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>February</td>
+          <td>$80</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><b>Tip:</b> The thead, tbody, and tfoot elements will not affect the layout of the table by default. However, you can use CSS to style these elements.</p>
+
+
+
+	<table>
+      <colgroup>
+        <col span="2" style="background-color:red">
+        <col style="background-color:yellow">
+      </colgroup>
+      <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>3476896</td>
+        <td>My first HTML</td>
+        <td>$53</td>
+      </tr>
+      <tr>
+        <td>5869207</td>
+        <td>My first CSS</td>
+        <td>$49</td>
+      </tr>
+   </table>
+
+	<h1>List</h1>
+    <hr>
+    
+    <h2>An Unordered List with Disc Bullets/Circle/Square/None</h2>
+
+    <ul style="list-style-type:square">
+      <li >Coffee</li>
+      <li >Tea</li>
+      <li >Milk</li>
+    </ul>
+
+    <h2>An Ordered List with Numbers/A/a/I/i</h2>
+
+    <ol type="i">
+      <li id='licommon'>Coffee</li>
+      <li id='licommon'>Tea</li>
+      <li id='licommon'>Milk</li>
+    </ol>
+
+    <h2>A Description List</h2>
+
+    <dl>
+      <dt>Coffee</dt>
+      <dd>- black hot drink</dd>
+      <dt>Milk</dt>
+      <dd>- white cold drink</dd>
+    </dl>
+
+    <h2>A Nested List</h2>
+
+    <ul>
+      <li>Coffee</li>
+      <li>Tea
+        <ol>
+        <li>Black tea</li>
+        <li>Green tea</li>
+        </ol>
+      </li>
+      <li>Milk</li>
+    </ul>
+
+	<h2>Horizontal Lists</h2>
+	<ul id='ul01'>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+
+	<h1>Block and Inline Elements</h1>
+    <hr>
+	<div style="background-color:black;color:white;padding:10px;">
+  <h2>London</h2>
+  <p style="color:yellow;">London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+  <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+</div> 
+
+    <h1>My <span style="color:red">Important</span> Heading</h1>
+
+	<h1>Class</h1>
+    <hr>
+    
+    <h2>An Unordered List with Disc Bullets/Circle/Square/None</h2>
+    
+    </body>
+</html>

@@ -1,14 +1,30 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title></title>#}
+{#</head>#}
+{#<body>#}
+{#    {%  extends "base.html" %}#}
+{##}
+{#    {%  block mainbody %}#}
+{#    <p>继承了 base.html 文件</p>#}
+{#    {%  endblock %}#}
+{#</body>#}
+{#</html>#}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    {%  extends "base.html" %}
 
-    {%  block mainbody %}
-    <p>继承了 base.html 文件</p>
-    {%  endblock %}
-</body>
+    <body>
+    {% extends 'blog/base_bootstrap.html' %}
+
+    {% block content %}
+        <h1>Hello World!</h1>
+
+
+    {% endblock content %}
+
+
+    </body>
 </html>

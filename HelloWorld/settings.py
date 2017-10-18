@@ -26,7 +26,7 @@ SECRET_KEY = '=jsrd4aug2=ywk*d6(l1ug6t=+$cr4%owh2%z@h%_f0vttf)2t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [u'melodyee.pythonanywhere.com', u'127.0.0.1']
 
 
 # Application definition
@@ -130,3 +130,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = '/Users/libingxin/HelloWorld/'
+# STATICFILES_DIRS = (
+#
+#     os.path.join(BASE_DIR, 'common_static'),
+#
+# )

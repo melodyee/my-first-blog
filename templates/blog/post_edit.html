@@ -1,9 +1,45 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base_bootstrap.html' %}
 
 {% block content %}
     <h1>New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+{#        {{ form.as_ul }}#}
+{#        {{ form.as_table }}#}
+{#        {{ form.as_p }}#}
+{#        {{ form.title.label_tag }}#}
+{#        {{ form.text.id_for_label }}#}
+{#            {{ form.text }}#}
+{#            {{ form.title}}#}
+
+{#        {% for field in form %}#}
+{#        <div class="fieldWrapper">#}
+{#        {{ field.errors }}#}
+{#        {{ field.label_tag }} {{ field }}#}
+{#        {% if field.help_text %}#}
+{#        <p class="help">{{ field.help_text|safe }}</p>#}
+{#        {% endif %}#}
+{#        </div>#}
+{#        {% endfor %}#}
+
+        <div class="fieldWrapper">
+            {{ form.title.errors }}
+            <label for="{{ form.title.id_for_label }}">Title: </label>
+            {{ form.title }}
+        </div>
+
+        <div class="fieldWrapper">
+            {{ form.title.errors }}
+            <label for="{{ form.text.id_for_label }}">Text: </label>
+            {{ form.text }}
+        </div>
+
+        <div class="fieldWrapper">
+            {{ form.published_date.errors }}
+            <label for="{{ form.published_date.id_for_label }}">published_date: </label>
+            {{ form.published_date }}
+        </div>
+
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 {% endblock %}

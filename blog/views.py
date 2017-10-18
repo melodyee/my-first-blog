@@ -46,3 +46,39 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+def post_month(request, pk):
+    # m = int(pk[5:6]) - 1
+    # print m
+    # date = pk[0:4] + "-" + pk[4:6] + "-" + pk[6:8]
+    # print "click month is :" + date
+    # date2 = pk[0:4] + "-" + pk[4:5] + str(m) + "-" + pk[6:8]
+    # print "click month is :" + date2
+    if pk == "August":
+        date1 = "2017-09-01"
+        date2 = "2017-08-01"
+    elif pk == "July":
+        date1 = "2017-08-01"
+        date2 = "2017-07-01"
+    elif pk == "June":
+        date1 = "2017-07-01"
+        date2 = "2017-06-01"
+    elif pk == "May":
+        date1 = "2017-06-01"
+        date2 = "2017-05-01"
+    elif pk == "April":
+        date1 = "2017-05-01"
+        date2 = "2017-04-01"
+    elif pk == "March":
+        date1 = "2017-04-01"
+        date2 = "2017-03-01"
+    elif pk == "February":
+        date1 = "2017-03-01"
+        date2 = "2017-02-01"
+    elif pk == "January":
+        date1 = "2017-02-01"
+        date2 = "2017-01-01"
+    posts = Post.objects.filter(published_date__lte=date1).filter(published_date__gte=date2).order_by('published_date')
+    return render(request, 'blog/post_list1.html', {'posts': posts})
+

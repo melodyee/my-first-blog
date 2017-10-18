@@ -26,15 +26,21 @@ from blog import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^hello$', view.hello),
+    url(r'^hello$', view.hello, name='home'),
     url(r'^testdb$', testdb.testdb),
     # url(r'^search_form$', search.search_form),
     # url(r'^search$', search.search),
     # url(r'^search_post$', search2.search_post),
     url(r'^post$', views.post_list, name='post_list'),
     # url(r'^post$', include('blog.urls')),
+    url(r'^post_bymonth/(?P<pk>.+)/$', views.post_month, name='post_month'),
     url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^polls/', include('polls.urls')),
+
+    url(r'^bootstrap-basic$', view.bootstrap, name='bootstrap-basic'),
+    url(r'^bootstrap-form$', view.bootstrapform, name='bootstrap-form'),
+    url(r'^bootstrap-demo$', view.bootstrapdemo, name='bootstrap-demo'),
+
 ]

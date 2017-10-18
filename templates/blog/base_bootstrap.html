@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- 引入 Bootstrap -->
+    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'bootstrap/dist/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+{#    <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>#}
+{#    <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>#}
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'bootstrap/dist/css/blog.css' %}" rel="stylesheet">
+    <style>
+        .blog-title {
+            margin-top: 50px;
+        }
+        .navbar-inverse {
+            background-color: #2e6da4;
+        }
+        .navbar-inverse .navbar-nav > .active > a,
+        .navbar-inverse .navbar-nav > .active > a:hover {
+            color: #FF00ff;
+            background-color: lightblue;
+        }
+        .navbar-inverse .navbar-nav > .active > a:focus {
+            color: #ffff00;
+            background-color: lightblue;
+        }
+
+    </style>
+
+
+    <script type="text/javascript" src="/static/js/navclick.js"></script>
+
+    <title>Bootstrap</title>
+</head>
+
+<body>
+{#    <div class="page-header">#}
+{#        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>#}
+{#        <h1><a href="/hello">Hover Camera's Blog</a></h1>#}
+{#    </div>#}
+
+
+    <!--Example1-->
+
+
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+{#                <a class="navbar-brand" href="#">Project name</a>#}
+                <a class="navbar-brand" href="{% url 'home'%}">
+                    <img alt="Brand" src="/static/image/B.png">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="nav navbar-nav" id="navbar-nav">
+                    <li id="home"><a href="{% url 'home'%}"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+                    <li id="basic"><a href="{% url 'bootstrap-basic' %}">
+                            <span class="glyphicon glyphicon-facetime-video"></span> Bootstrap Basics </a></li>
+                    <li id="form" ><a href="{% url 'bootstrap-form' %}"><span class="glyphicon glyphicon-film"></span> Bootstrap Form </a></li>
+                    <li id="demo"><a href="{% url 'bootstrap-demo' %}"><span class="glyphicon glyphicon-usd"></span> JavaScript Demo </a></li>
+                </ul>
+
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default ">Submit</button>
+                </form>
+
+
+                <button type="button" class="btn btn-warning navbar-btn">Sign in</button>
+                <p class="navbar-text">Signed in as Melody</p>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span> </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Setting</a></li>
+                            <li><a href="#">Account</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Exit</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.nav-collapse -->
+{#            <script type="text/javascript">#}
+{#                $(".navbar-nav li").click(function(){#}
+{#                    alert("Hello World!");#}
+{#                    $(this).addClass('active').siblings().removeClass('active');#}
+{#                });#}
+{#            </script>#}
+{#            <script language="javascript" type="text/javascript">#}
+{#                $("#navbar-nav li a").each(function(){#}
+{#                    if($($(this))[0].href==String(window.location))#}
+{#                        $(this).parent().addClass("active");#}
+{#                        console.log($(this));#}
+{#                        console.log($(this).parent());#}
+{#                        console.log($($(this)[0]).href);#}
+{#                        console.log("当前页面url: " + String(window.location));#}
+{#                        console.log($($(this))[0].href==String(window.location));#}
+{#                    console.log("so so so ... ");#}
+{##}
+{#                });#}
+{#            </script>#}
+
+        </div><!-- /.container -->
+    </div>
+
+
+    <div class="content container">
+        <div class="blog-header">
+            <h1 class="blog-title">Lift is short, Python is more</h1>
+            <p class="lead blog-description">HTML CSS JS ------>  Bootstrap </p>
+        </div>
+
+    <!--Example2-->
+{#        <div class="blog-masthead">#}
+{#          <div class="container navigation">#}
+{#            <nav class="blog-nav">#}
+{#              <a class="blog-nav-item active" href="{% url 'home'%}"><span class="glyphicon glyphicon-home"></span> Home</a>#}
+{#              <a class="blog-nav-item" href="{% url 'bootstrap-basic' %}"><span class="glyphicon glyphicon-shopping-cart"></span> Bootstrap Basic</a>#}
+{#              <a class="blog-nav-item" href="{% url 'bootstrap-form' %}"><span class="glyphicon glyphicon-headphones"></span> Form</a>#}
+{#              <a class="blog-nav-item" href="{% url 'post_list' %}">Blogs</a>#}
+{#              <a class="blog-nav-item" href="#">New hires</a>#}
+{#              <a class="blog-nav-item" href="#">About</a>#}
+{#            </nav>#}
+{#          </div>#}
+{#        </div>#}
+
+
+        <div class="row">
+            <div class="col-md-8 blog-main">
+                {% block content %}
+                {% endblock %}
+
+                <nav>
+                    <ul class="pager">
+                      <li><a href="#">Previous</a></li>
+                      <li><a href="#">Next</a></li>
+                    </ul>
+                </nav>
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+              <div class="sidebar-module sidebar-module-inset">
+                <h4>About</h4>
+                <p> The owner <em>Melody</em> is a little student, don't lang ~~~ </p>
+              </div>
+              <div class="sidebar-module">
+                <h4>Archives</h4>
+                <ol class="list-unstyled">
+                  <li><a href="{% url 'post_month' "August" %}">August 2017</a></li>
+                  <li><a href="{% url 'post_month' "July" %}">July 2017</a></li>
+                  <li><a href="{% url 'post_month' "June" %}">June 2017</a></li>
+                  <li><a href="{% url 'post_month' "May" %}">May 2017</a></li>
+                  <li><a href="{% url 'post_month' "April" %}">April 2017</a></li>
+                  <li><a href="{% url 'post_month' "March" %}">March 2017</a></li>
+                  <li><a href="{% url 'post_month' "February" %}">February 2017</a></li>
+                  <li><a href="{% url 'post_month' "January" %}">January 2017</a></li>
+                </ol>
+              </div>
+              <div class="sidebar-module">
+                <h4>Elsewhere</h4>
+                <ol class="list-unstyled">
+                  <li><a href="#">GitHub</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Facebook</a></li>
+                </ol>
+              </div>
+            </div><!-- /.blog-sidebar -->
+
+
+        </div>
+
+
+    </div>
+
+
+    <footer class="blog-footer">
+      <p>Blog template built for
+          <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.
+      </p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'bootstrap/assets/js/dropdown.js' %}"></script>
+    <script src="{% static 'bootstrap/assets/js/docs.min.js' %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'bootstrap/assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+
+
+</body>
+
+</html>
+

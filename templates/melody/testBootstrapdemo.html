@@ -1,0 +1,195 @@
+{% extends 'blog/base_bootstrap.html' %}
+
+<body xmlns="http://www.w3.org/1999/html">
+{% block content %}
+
+    <h3>Test JS</h3>
+    <button type="button" class="btn btn-info navbar-btn" onclick="alert('欢迎!')"> 点我! </button>
+
+    <br>
+    <h3>Console log</h3>
+    <button type="button" class="btn btn-warning" onclick="test()">TestConsoleLog</button>
+    <script>
+    function test(){
+        console.log("I am a log");
+    }
+    </script>
+
+    <br>
+    <h3>查找最大的数</h3>
+    <button type="button" class="btn btn-success" id="btnshowmax">TestShowMax</button>
+    <script>
+    $(function(){
+        $("#btnshowmax").click(function(){
+            x = findMax(1, 600, 123, 500, 115, 44, 88);
+            function findMax(){
+                var i;
+                var max = arguments[0];
+                if (arguments.length < 2) return max;
+
+                for (i=0; i < arguments.length; i++){
+                    if (arguments[i] > max){
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            }
+            $("#btnshowmax").html(x);
+            console.log("Max is: " + x);
+        });
+    })
+
+    </script>
+    <!-- javascript demo>
+    <h1 id="demo1"></h1>
+    <script>
+    x = findMax(1, 123, 500, 115, 44, 88);
+
+    function findMax() {
+        var i, max = arguments[0];
+
+        if(arguments.length < 2) return max;
+
+        for (i = 0; i < arguments.length; i++) {
+            if (arguments[i] > max) {
+                max = arguments[i];
+            }
+        }
+        return max;
+    }
+    document.getElementById("demo1").innerHTML = x;
+    </script> -->
+
+
+
+    <br>
+    <h3>Change info</h3>
+    <button type="button" class="btn btn-success" id="btnshowinfo">TestShowInfo</button>
+    <div class="divFrame">
+        <div class="divTitle">请输入如下信息</div>
+        <div class="divContent">姓名:
+            <input id="Textl" type="text" class="txtCss" />
+            <br />性别:
+            <input id="Radiol" name="rdoSex" type="radio" value="男" />男
+            <input id="Radio2" name="rdoSex" type="radio" value="女" />女
+            <br />婚否:
+            <input id="Checkboxl" type="checkbox" />
+        </div>
+        <div id="divTip" class="divTip">Answer is: </div>
+
+    </div>
+
+    <br>
+    <h3>Cookie</h3>
+    <button type="button" class="btn btn-primary" id="btnshowcookie" onclick="checkCookie()">TestShowCookie</button>
+    <script>
+        function setCookie(cname, cvalue, exdays){
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname +"=" + cvalue + "; "+expires;
+        }
+        function getCookie(cname){
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+            }
+            return "";
+        }
+        function checkCookie(){
+            var user=getCookie("username");
+            if (user!=""){
+                alert("Welcome again " + user);
+            }
+            else {
+                user = prompt("Please enter your name:","");
+                if (user!="" && user!=null){
+                    setCookie("username",user,30);
+                }
+            }
+            console.log(document.cookie);
+        }
+
+    </script>
+
+    <br>
+    <h3>Process Bar</h3>
+    <style>
+        #myProgress {
+          width: 100%;
+          background-color: #ddd;
+        }
+
+        #myBar {
+          width: 1%;
+          height: 30px;
+          background-color: #4CAF50;
+        }
+    </style>
+
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" id="btnshowprogress">TestShowProgressBar</button>
+    <script>
+        $(function(){
+            $("#btnshowprogress").click(function(){
+              //var elem = document.getElementById("myBar");
+                var width = 1;
+                var id = setInterval(frame, 10);
+                console.log(width);
+
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id);
+                    } else {
+                        width++;
+                        //elem.style.width = width + '%';
+                        //console.log($("#myBar").contents());
+                        $("#myBar").css({
+                            "width": width + '%',
+                        });
+                    }
+                }
+            });
+        })
+    </script>
+
+    <br>
+    <h3>Process Bar by Bootstrap</h3>
+    <div class="div-group">
+        <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-success" role="progressbar"
+             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+             style="width: 90%;">
+            <span class="sr-only">90% 完成（成功）</span>
+        </div>
+        </div>
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                 style="width: 30%;">
+                <span class="sr-only">30% 完成（信息）</span>
+            </div>
+        </div>
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-warning" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                 style="width: 20%;">
+                <span class="sr-only">20% 完成（警告）</span>
+            </div>
+        </div>
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-danger" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                 style="width: 10%;">
+                <span class="sr-only">10% 完成（危险）</span>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+</body>
